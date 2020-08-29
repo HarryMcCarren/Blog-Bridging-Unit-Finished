@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>All Posts</h1>
+    {% if post_list %}
+    <ul>
+        {% for post in post_list %}
+        {% if post.published_date %}
+            <li class="post">
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a> by {{ post.author }}.</h3>
+                <p>
+                    {{post.text}}
+                </p>
+            </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No posts here!</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<h2> Who am I? </h2>
+		<div class="main">
+			<p> I am Henry Gabriel James Mc Carren, a second year student reading Computer Science.
+                Currently, I am studying at the University of Birmingham for a BSc (Hons) in computer As a high-achieving person,
+                I am open to gaining experience in any area, such as Software development, Cloud systems, Networking,
+                Cyber security, Web design and Data analytics
+                I consider myself a mature person who is reliable and dedicated to providing a 
+                customer-focused attitude. I am willing to take on all roles, no matter how trivial or how mundane, 
+                giving full commitment and taking pride in completing a job well done.  As a very patient 
+                and excellent communicator, with both resilience and a ‘CAN-DO-WILL-DO’ attitude, 
+                I hope you will consider me for any suitable vacancy. 
+                Please feel free to contact me for an informal chat or an interview.
+                As you can see from my technical competences, I am not a person who simply attends university, 
+                but also uses this opportunity to extend my skill set. I possess several key skills that
+                make me a suitable person for a placement within your company.
+                Whilst studying for A-Level examinations and UKCAT, I successfully learnt to 
+                drive and obtained three A*s with a UKCAT score in the top 10%, 
+                which resulted in the award of an academic achievement scholarship 
+                from the University of Birmingham. In addition, 
+                throughout the Covid-19 period and the summer of 2020, 
+                I took it upon myself to learn C, C++, Haskell, C#, HTML, CSS and 
+                JavaScript, as well as studying advanced degree-level mathematics to
+                supplement my first year studies demonstrating my resilience and 
+                exceptional organisation skills. 
+                I have worked in a team on many occasions during the first year of my degree, 
+                both as a team leader and team member. My approach is simply one of listening, 
+                thus giving a platform to each team member, but also driving the task forward. 
+                I like to think of myself as a ‘CAN-DO-WILL-DO’ person.
+                I am adaptable and agile at developing solutions to problems; at times, I had 
+                to research new technologies, learn programming languages, and even formulate 
+                new approaches and algorithms to overcome technical limitations in order 
+                to complete the task. </p><p>
+                However, I am not always working at a computer! 
+                I am a regular member of the University of Birmingham Ballroom 
+                and Latin dancing society, participating in dancing competitions
+                alongside other universities on the inter-varsity circuit and I 
+                also enjoy other non-contact sports such as tennis, badminton and swimming. 
+                I have a passion for foreign languages so I read 
+                French literature to broaden the depth of my spoken French. 
+            </p> </div>
+		<div class="contact">
+            <p>Contact me at: <a href="mailto:HGM907@student.bham.ac.uk">
+                HGM907@student.bham.ac.uk</a></p>
+        </div>
+        <div class="picture">
+            {% load static %}
+            <img src="{% static 'images/harry.jpg' %}", alt="A picture of me." width=25%
+            height=25%/>
+        </div>
+{% endblock %}

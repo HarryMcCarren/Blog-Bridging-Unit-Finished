@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="post">
+        <div id="editor-tools">
+            <ul>
+                {% if user.is_authenticated %}
+                    {% if perms.post.change %}
+                        <li>
+                            <a class="btn btn-default" 
+                            href="{% url 'post_edit' id=post.id %}">Edit Post</a>
+                        </li>
+                    {% endif %}
+                    {% if perms.post.can_publish %}
+                        {% if not post.published_date %}
+                            <li>
+                                <a class="btn btn-default" 
+                            href="{% url 'post_publish' id=post.id %}">Publish Post</a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                    {% if perms.post.delete %}
+                        <li>
+                            <a class="btn btn-default"
+                            href="{% url 'post_remove' id=post.id %}">Delete?</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </div>
+        <h1>Title: {{ post.title }}</h1>
+        <p><strong>Author: </strong>{{ post.author }}</p>
+        <p>{{ post.text }}</p>
+        <p>Created at: <span class="date">
+            {{ post.created_date }}
+        </span></p>
+        {% if post.published_date %}
+            <p><span class="date">
+                Published at: {{ post.published_date }}
+            </span></p>
+        {% endif %}
+    </main>
+    <hr />
+    <section id="comments">
+        <p>Comments: {{ post.approved_comments.count }}</p>
+        {% for comment in post.comments.all %}
+            {% if perms.comment.can_approve or comment.approved %}
+            <ul class="comment">
+                {% if comment.approved %}
+                Dated: {{ comment.created_date }}
+                {% endif %}
+                {% if perms.comment.can_approve %}
+                <div class="comment-editor">
+                    <li>
+                        <a class="btn btn-default"
+                        href="{% url 'comment_remove' id=comment.id %}">
+                            Remove Comment
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-default"
+                        href="{% url 'comment_approve' id=comment.id %}">
+                            Approve Comment
+                        </a>
+                    </li>
+                </div>
+                {% endif %}
+                <li>
+                    <strong>Author: {{ comment.author }}</strong>
+                </li>
+                <li>
+                    <p>{{ comment.text|linebreaks }}</p>
+                </li>
+            {% endif %}
+            </ul>
+        {% empty %}
+            <p>No comments here yet!</p>
+        {% endfor %}
+            {% if user.is_authenticated %}
+            <p><a class="btn btn-default"
+                href="{% url 'add_comment_to_post' id=post.id %}">
+                Add a comment!
+            </a></p>
+            {% endif %}
+    </section>
+{% endblock %}

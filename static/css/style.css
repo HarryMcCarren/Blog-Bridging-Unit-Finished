@@ -1,0 +1,131 @@
+/* Tablets, iPads (landscape) ---------- */
+/* This width of the site is not reduced on 
+phones and tablets. */
+@media screen and (min-width: 1024px){
+    body {
+        width: 70%;
+        min-width: 800px;
+        margin: 0 auto;
+        background-image: url("../images/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 2vh 0vh 2vh 0vh;
+    }
+}
+
+
+header {
+    padding: 2vh 3vh 2vh 3vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: grid;
+    font-family: 'Barlow', sans-serif;
+}
+
+header h1 {
+    grid-row: 1;
+    font-family: 'Oregano', cursive;
+    font-style: italic;
+    font-size: 4em;
+    color: #9999ff;
+}
+
+header .user_id {
+    grid-row: 2;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+header nav {
+    grid-row: 3;
+}
+
+header nav ul {
+    padding: 2vh 0vh 0vh 0vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+header nav ul li {
+    padding: 1vh 0vh 0vh 0vh;
+    background-color: black;
+    flex-grow: 1;
+    flex-shrink: 0.8;
+    text-align: center;
+    height: 8vh;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+body {
+    padding: 2vh 0vh 0vh 0vh;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+main {
+    grid-row: 2;
+    padding: 2vh 3vh 2vh 3vh;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+  
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.post {
+    margin-bottom: 70px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid grey;
+    list-style-type: none;
+    padding: 1vh 2vh 1vh 2vh;
+}
+
+.post h3 a, .post h1 a:visited {
+    color: #000000;
+}
+
+#editor-tools ul {
+    list-style-type: none;
+    float: right;
+}
+#editor-tools li {
+    padding: 0vh 0vh 1vh 0vh;
+}
+
+#comments {
+    padding: 1vh 0vh 0vh 0vh;
+}
+.comment {
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1vh 1vh 1vh 1vh;
+}
+.comment-editor {
+    float: right;
+}
+.comment-editor li {
+    padding: 0vh 0vh 1vh 0vh;
+}
+footer {
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1vh 1vh 1vh 1vh;
+}
+img {
+    border: 2px solid grey;
+}
